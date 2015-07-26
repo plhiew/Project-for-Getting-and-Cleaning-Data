@@ -30,7 +30,7 @@ Before running the script, please ensure that:
 
 ## Steps
 
-1. Copy the R script "run_analysis.R" into the data directory "UCI_HAR_Dataset". 
+1\. Copy the R script "run_analysis.R" into the data directory "UCI_HAR_Dataset". 
 
 2\. Set your working directory to the data directory.
 ```{r}
