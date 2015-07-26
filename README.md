@@ -1,12 +1,9 @@
-# Project-for-Getting-and-Cleaning-Data
+# Project for Getting and Cleaning Data
 
 This document describes the contents of this repository. It provides instructions on how to setup the environment for running the R script to transform the raw data set specified
 in the [Course Project](https://class.coursera.org/getdata-030/human_grading/view/courses/975114/assessments/3/submissions) into a tidy data set.
 
-__References:__
 
-1. Getting and Cleaning Data Course Project [Assignment Page](https://class.coursera.org/getdata-030/human_grading/view/courses/975114/assessments/3/submissions).
-   
 ## Content of repository
 
 Filename       | Description
@@ -33,7 +30,7 @@ Before running the script, please ensure that:
 
 ## Steps
 
-1\. Copy the R script "run_analysis.R" into the data directory "UCI_HAR_Dataset". 
+1. Copy the R script "run_analysis.R" into the data directory "UCI_HAR_Dataset". 
 
 2\. Set your working directory to the data directory.
 ```{r}
@@ -65,3 +62,9 @@ Before running the script, please ensure that:
 ```{r}
 > read.table("average_by_subject_by_activity.txt", header = TRUE)
 ```
+
+
+
+__References:__
+
+1. Getting and Cleaning Data Course Project [Assignment Page](https://class.coursera.org/getdata-030/human_grading/view/courses/975114/assessments/3/submissions).

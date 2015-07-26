@@ -45,6 +45,15 @@ rm(tmp1); rm(tmp2)
 features <- read.table("features.txt", stringsAsFactors = FALSE)
 indices_of_selected_columns <- grep("(mean\\()|(std\\()", features[, 2])
 means_and_standard_deviation <- readings[ , indices_of_selected_columns]
+
+
+# 3. Uses descriptive activity names to name the activities in the data set
+activity_labels <- read.table("activity_labels.txt", stringsAsFactors = FALSE)
+activity_labels[, 2] = gsub("_", " ", str_to_title(activity_labels[,2]))
+activities[ , 1] = activity_labels[activities[ , 1], 2]
+
+
+# 4. Appropriately labels the data set with descriptive variable names. 
 column_names <- features[indices_of_selected_columns, 2]
 column_names <- gsub("\\(|\\)", "", column_names)
 column_names <- gsub("X", "X-Axis", column_names)
@@ -57,17 +66,7 @@ column_names <- gsub("tB", "TimeDomainB", column_names)
 column_names <- gsub("tG", "TimeDomainG", column_names)
 column_names <- gsub("fB", "FrequencyDomainB", column_names)
 names(means_and_standard_deviation) <- column_names
-
-
-# 3. Uses descriptive activity names to name the activities in the data set
-activity_labels <- read.table("activity_labels.txt", stringsAsFactors = FALSE)
-activity_labels[, 2] = gsub("_", " ", str_to_title(activity_labels[,2]))
-activities[ , 1] = activity_labels[activities[ , 1], 2]
-
-
-# 4. Appropriately labels the data set with descriptive variable names. 
 dataset <- cbind(subjects, activities, means_and_standard_deviation)
-# write.table(dataset, "mean_and_std_deviation.txt")
 
 
 # 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
